@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk40xj0q0vq2s"]
+
+[ext_resource type="FontFile" uid="uid://b0n14doelva1v" path="res://UI/SpecialElite.ttf" id="1_c1dej"]
+[ext_resource type="Script" path="res://Scripts/question_slide.gd" id="1_gggou"]
+
+[node name="question_slide" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gggou")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Panel/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/AspectRatioContainer"]
+visible = false
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_c1dej")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer/AspectRatioContainer"]
+visible = false
+layout_mode = 2

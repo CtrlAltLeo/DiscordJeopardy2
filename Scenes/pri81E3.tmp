@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://w4i2up7vib7q"]
+
+[ext_resource type="Script" path="res://Scripts/price_button.gd" id="1_2p52b"]
+
+[sub_resource type="Gradient" id="Gradient_jnom7"]
+colors = PackedColorArray(0, 0, 0, 1, 4.81307e-07, 0.375404, 0.565427, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kat4f"]
+gradient = SubResource("Gradient_jnom7")
+
+[node name="price_button" type="MarginContainer"]
+custom_minimum_size = Vector2(120, 60)
+offset_right = 100.0
+offset_bottom = 60.0
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_2p52b")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture1D_kat4f")
+texture_hover = SubResource("GradientTexture1D_kat4f")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CenterContainer"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+text = "$100"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

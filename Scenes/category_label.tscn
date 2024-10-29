@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgmp3qoulauai"]
+
+[ext_resource type="PackedScene" uid="uid://w4i2up7vib7q" path="res://Scenes/price_button.tscn" id="1_swy7p"]
+
+[node name="category_label" instance=ExtResource("1_swy7p")]
+custom_minimum_size = Vector2(160, 80)
+
+[node name="TextureButton" parent="." index="0"]
+disabled = true
+
+[node name="Label" parent="CenterContainer" index="0"]
+custom_minimum_size = Vector2(120, 100)
+text = "Neat questions for your Dog and stuff"
